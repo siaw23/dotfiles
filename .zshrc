@@ -5,6 +5,9 @@ export PATH="$PATH:`pwd`/flutter/flutter/bin"
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
+alias rblint="bundle exec standardrb --fix"
+alias bc="bundle console"
+
 alias delete_branches="git branch | grep -v "master" | xargs git branch -D"
 
 alias pc="sudo lsof -i"
@@ -25,7 +28,10 @@ alias ga="git add"
 alias gc="git commit"
 alias gb="git branch"
 alias gac="git commit -a -m"
-alias gphm="git push heroku main"
+alias gphm="git push heroku master"
+
+
+alias ovserver="ssh root@167.172.111.17"
 
 
 alias dc="docker-compose"
@@ -70,7 +76,7 @@ export ZSH="/Users/siaw23/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 
 plugins=(git)
@@ -86,3 +92,4 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
 #export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

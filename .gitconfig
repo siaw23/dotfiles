@@ -1,16 +1,12 @@
-# This is Git's per-user configuration file.
-# [user]
-# 	name = Emmanuel Hayford
-# 	email = siawmensah@gmail.com
-# # Please adapt and uncomment the following lines:
-# [filter "lfs"]
-# 	clean = git-lfs clean -- %f
-# 	smudge = git-lfs smudge -- %f
-# 	process = git-lfs filter-process
-# 	required = true
-# [core]
-# 	editor = vim
-[includeIf "gitdir:/Users/siaw23/Desktop/"]
-  path = .gitconfig-github
-[includeIf "gitdir:/Users/siaw23/Desktop/dsirf/"]
-  path = .gitconfig-dsirf
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	name = Emmanuel Hayford
+	email = hi@manny.codes
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
