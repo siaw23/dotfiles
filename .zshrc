@@ -1,56 +1,7 @@
-# export EDITOR="/usr/local/bin/mate -w"
+source $HOME/.aliases
 
 export PATH="$PATH:`pwd`/flutter/flutter/bin"
 
-alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-
-alias rblint="bundle exec standardrb --fix"
-alias bc="bundle console"
-
-alias delete_branches="git branch | grep -v "master" | xargs git branch -D"
-
-alias pc="sudo lsof -i"
-alias bt="htmlbeautifier"
-alias rb="rubocop"
-alias uchrome="open /Applications/Google\ Chrome.app --args --user-data-dir="/var/tmp/Chrome dev session" --disable-web-security --allow-file-access-from-files"
-
-## Redis
-alias redstart="brew services start redis"
-alias redstop="brew services stop redis"
-alias redping="redis-cli ping"
-
-
-alias gco="git checkout"
-alias gs="git status"
-alias gd="git diff "
-alias ga="git add"
-alias gc="git commit"
-alias gb="git branch"
-alias gac="git commit -a -m"
-alias gphm="git push heroku master"
-
-
-alias ovserver="ssh root@167.172.111.17"
-
-
-alias dc="docker-compose"
-
-alias del="rm -rf"
-
-alias ri="rake install"
-alias bc="bin/console"
-
-
-alias mux="tmux"
-alias tl="tmux list-session"
-alias ta="tmux attach -t"
-
-
-alias restart="sudo shutdown -r"
-
-alias cra="npx create-react-app"
-alias ant="antora generate antora-playbook.yml"
 
 phx() {
   if [[ $@ == "c" || $@ == "console" ]]; then
@@ -62,6 +13,7 @@ phx() {
   fi
 }
 
+## Adjest microphone gain from terminal
 gain() {
   osascript -e "set volume input volume $1" && echo "🎙  gain set to $1%."
 }
