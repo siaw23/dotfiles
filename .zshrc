@@ -1,7 +1,5 @@
+PROMPT='%F{green}%1~%f %# '
 source $HOME/.aliases
-
-export PATH="$PATH:`pwd`/flutter/flutter/bin"
-
 
 phx() {
   if [[ $@ == "c" || $@ == "console" ]]; then
@@ -13,7 +11,7 @@ phx() {
   fi
 }
 
-## Adjest microphone gain from terminal
+## Adjust microphone gain from terminal
 gain() {
   osascript -e "set volume input volume $1" && echo "🎙  gain set to $1%."
 }

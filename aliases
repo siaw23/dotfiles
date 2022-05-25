@@ -1,21 +1,11 @@
-## PG
+#PostgreSQL
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
 ## Linting
 alias sb="bundle exec standardrb --fix"
-alias bc="bundle console"
+alias rb="rubocop -a"
 alias bt="htmlbeautifier"
-alias rb="rubocop"
-
-
-alias pc="sudo lsof -i"
-alias uchrome="open /Applications/Google\ Chrome.app --args --user-data-dir="/var/tmp/Chrome dev session" --disable-web-security --allow-file-access-from-files"
-
-## Redis
-alias redstart="brew services start redis"
-alias redstop="brew services stop redis"
-alias redping="redis-cli ping"
 
 ## Git
 alias gco="git checkout"
@@ -25,22 +15,56 @@ alias ga="git add"
 alias gc="git commit"
 alias gb="git branch"
 alias gac="git commit -a -m"
-alias gphm="git push heroku master"
-alias delete_branches="git branch | grep -v "master" | xargs git branch -D"
+alias gphm="git push heroku main"
+alias db="git branch | grep -v "master" | xargs git branch -D"
+alias gc='git commit -S -m'
+alias ga='git add .'
+alias gb='git branch'
+alias gs='git status'
+alias gcm='git checkout master'
+alias gpo='git push origin'
 
-alias dc="docker-compose"
-
-alias del="rm -rf"
-
+# Gems
 alias ri="rake install"
 alias bc="bin/console"
+alias bc="bundle console"
 
 ## Tmux
 alias mux="tmux"
 alias tl="tmux list-session"
 alias ta="tmux attach -t"
 
-alias restart="sudo shutdown -r"
 
-alias cra="npx create-react-app"
-alias ant="antora generate antora-playbook.yml"
+# Mac OS
+alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias del='rm -rf'
+alias restart="sudo shutdown -r"
+alias pc="sudo lsof -i"
+
+# Docker
+alias dc="docker-compose"
+alias dcports='time docker-compose run --service-ports app --rm'
+alias dctest='time docker-compose run app rails test'
+alias dcc='time docker-compose run app rails console'
+alias dcrun='time docker-compose run app'
+alias dcload='time docker-compose run app rails db:environment:set RAILS_ENV=development db:create db:structure:load db:fixtures:load'
+alias dcbuild='time docker-compose up --build && dcload'
+alias dcclean='docker stop $(docker ps -aq) && docker rm $(docker ps -aq) && docker rmi $(docker images -q) && docker images -aq -f 'dangling=true' | xargs docker rmi && docker volume ls -q -f 'dangling=true' | xargs docker volume rm'
+alias dcrspec='time docker-compose run app bundle exec rspec'
+alias dcredis='docker exec -it tagpics_redis_1 redis-cli'
+alias dcprune='docker stop $(docker ps -aq) && docker system prune -a'
+alias dcremovecontainers='docker rm $(docker ps -aq)'
+alias dcremoveimages='time docker rmi $(docker images -q)'
+alias dclist='docker ps -aq'
+alias dccreate='docker-compose run app rails db:create'
+alias dcpristine='dcclean && dcbuild && dccreate'
+alias dcdbcreate='docker-compose run app rails db:create'
+alias dcdbpristine='time docker-compose run app rails db:drop db:create db:migrate db:structure:load db:fixtures:load'
+alias dclearspace='rm -rf ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2'
+
+# Redis
+# More info: https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298
+alias redstart="brew services start redis"
+alias redstop="brew services stop redis"
+alias redping="redis-cli ping"
