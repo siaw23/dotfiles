@@ -45,3 +45,6 @@ brew install htop
 brew install tree
 
 brew install mas
+
+# Get current network's wifi password
+brew install wifi-password
