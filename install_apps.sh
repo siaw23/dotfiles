@@ -17,6 +17,7 @@ brew install nvm
 brew install awscli
 brew install --cask visual-studio-code
 brew install --cask github
+brew install postgresql
 
 # Utilities
 brew install --cask vlc
