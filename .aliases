@@ -23,7 +23,7 @@ alias ga='git add .'
 alias gb='git branch'
 alias gs='git status'
 alias gcm='git checkout master'
-alias gpo='git push origin'
+alias gpoh='git push origin HEAD'
 
 # Gems
 alias ri="rake install"
