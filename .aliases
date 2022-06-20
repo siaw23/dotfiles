@@ -5,6 +5,7 @@ alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 ## Linting
 alias sb="bundle exec standardrb --fix"
 alias rb="rubocop -a"
+alias rbc="git ls-files -m | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs rubocop -a"
 alias bt="htmlbeautifier"
 
 ## Git

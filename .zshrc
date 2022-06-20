@@ -1,16 +1,6 @@
 PROMPT='%F{green}%1~%f %# '
 source $HOME/.aliases
 
-phx() {
-  if [[ $@ == "c" || $@ == "console" ]]; then
-    command iex -S mix
-  elif [[ $@ == "s" || $@ == "server" ]]; then
-    command mix phx.server
-  elif [[ $@ == "r" || $@ == "routes" ]]; then
-    command mix phx.routes
-  fi
-}
-
 ## Adjust microphone gain from terminal
 gain() {
   osascript -e "set volume input volume $1" && echo "🎙  gain set to $1%."
