@@ -24,6 +24,7 @@ alias gb='git branch'
 alias gs='git status'
 alias gcm='git checkout master'
 alias gpoh='git push origin HEAD'
+alias glo="git log --pretty=oneline"
 
 # Gems
 alias ri="rake install"
@@ -42,6 +43,7 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder
 alias del='rm -rf'
 alias restart="sudo shutdown -r"
 alias pc="sudo lsof -i"
+aliat co="code "
 
 # Docker
 alias dc="docker-compose"
