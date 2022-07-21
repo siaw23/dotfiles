@@ -1,6 +1,6 @@
 # Rails
 alias rr="rails routes"
-aliast rrg="rails routes -g"
+alias rrg="rails routes | grep"
 
 #PostgreSQL
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
@@ -75,3 +75,6 @@ alias dclearspace='rm -rf ~/Library/Containers/com.docker.docker/Data/com.docker
 alias redstart="brew services start redis"
 alias redstop="brew services stop redis"
 alias redping="redis-cli ping"
+
+# Misc
+alias js="jekyll server --unpublished"
